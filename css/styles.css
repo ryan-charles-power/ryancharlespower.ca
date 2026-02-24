@@ -1,5 +1,4 @@
 /* Reset default browser styles */
-
 * {
     box-sizing: border-box;
 }
@@ -16,12 +15,22 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
 }
 
 /* Navigation */
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
 }
 
 nav li {
