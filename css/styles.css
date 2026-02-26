@@ -111,3 +111,19 @@ footer {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ensure the container spans the full width */
+}
+
+.left-text {
+    /* Optional: ensures left alignment if the container's text-align property is different */
+    text-align: left; 
+}
+
+.right-text {
+    /* Optional: ensures right alignment if the container's text-align property is different */
+    text-align: right;
+}
