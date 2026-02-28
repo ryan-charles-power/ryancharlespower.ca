@@ -78,7 +78,7 @@ footer {
     background: #eee;
 }
 
-.button {
+.resume_button {
     background: #1a73e8;
     color: white;
     padding: 10px 20px;
@@ -89,8 +89,27 @@ footer {
     transition: background 0.3s ease;
 }
 
-.button:hover {
+.resume_button:hover {
     background: #155ab6;
+}
+
+.reference_button {
+    background: #9ca4ae;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.reference_button:hover {
+    background: #787d85;
+}
+
+.reference_div_center {
+    text-align: center;
 }
 
 .projects-grid {
