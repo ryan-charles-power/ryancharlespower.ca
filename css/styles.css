@@ -94,7 +94,7 @@ footer {
 }
 
 .reference_button {
-    background: #9ca4ae;
+    background: #1a73e8;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
@@ -105,7 +105,7 @@ footer {
 }
 
 .reference_button:hover {
-    background: #787d85;
+    background: #155ab6;
 }
 
 .reference_div_center {
