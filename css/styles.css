@@ -146,3 +146,22 @@ footer {
     /* Optional: ensures right alignment if the container's text-align property is different */
     text-align: right;
 }
+
+.right-circle {
+  /* 1. Ensure the image is a perfect square for a perfect circle */
+  width: 200px;
+  height: 200px; 
+
+  /* 2. Apply border-radius to create the circle shape */
+  border-radius: 50%; 
+
+  /* 3. Float the image to the right side of its container */
+  float: right; 
+
+  /* 4. Optional: Add some margin for spacing between the image and surrounding text */
+  margin-left: 20px;
+  margin-bottom: 10px;
+  
+  /* 5. Optional: Ensure the image covers the circle area nicely */
+  object-fit: cover; 
+}
