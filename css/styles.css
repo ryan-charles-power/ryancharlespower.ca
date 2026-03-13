@@ -165,3 +165,57 @@ footer {
   /* 5. Optional: Ensure the image covers the circle area nicely */
   object-fit: cover; 
 }
+
+#dev-dashboard {
+    margin-top: 40px;
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 15px;
+}
+
+.dashboard-card {
+    background: #fafafa;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.dashboard-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+}
+
+.dashboard-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-card li {
+    padding: 4px 0;
+    font-size: 0.95rem;
+}
+
+.dashboard-card span {
+    font-weight: 600;
+}
+
+.repo-star {
+    color: #f4b400;
+    margin-left: 4px;
+}
