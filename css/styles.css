@@ -164,6 +164,8 @@ footer {
   
   /* 5. Optional: Ensure the image covers the circle area nicely */
   object-fit: cover; 
+
+  border: 3px solid #333
 }
 
 #dev-dashboard {
