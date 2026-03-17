@@ -1,6 +1,6 @@
 async function loadDashboard() {
 
-    const res = await fetch("http://localhost:8080/api/github/dashboard");
+    const res = await fetch("https://ryan-github-api.onrender.com/api/github/dashboard");
     const data = await res.json();
 
     document.getElementById("repos").textContent = data.repos;
