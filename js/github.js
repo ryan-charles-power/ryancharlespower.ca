@@ -19,10 +19,10 @@ async function loadDashboard() {
     langList.innerHTML = "";
     repoList.innerHTML = "";
 
-    const max = Math.max(...Object.values(data.top_languages));
+    const sortedLangs = Object.entries(data.top_languages)
+        .sort((a, b) => b[1] - a[1]);
 
-    for (const [lang, count] of Object.entries(data.top_languages)) {
-
+    for (const [lang, percentage] of sortedLangs) {
         const wrapper = document.createElement("div");
         wrapper.className = "language-bar";
 
@@ -35,12 +35,13 @@ async function loadDashboard() {
 
         const fill = document.createElement("div");
         fill.className = "language-fill";
-        fill.style.width = `${(count / max) * 100}%`;
+        fill.style.width = `${percentage}%`;
 
         graph.appendChild(fill);
 
         const number = document.createElement("span");
-        number.textContent = count;
+        number.className = "language-number"; 
+        number.textContent = `${percentage.toFixed(1)}%`;
 
         wrapper.appendChild(name);
         wrapper.appendChild(graph);
@@ -48,7 +49,6 @@ async function loadDashboard() {
 
         langList.appendChild(wrapper);
     }
-
 
     data.top_repos.forEach(repo => {
 
