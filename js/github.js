@@ -5,23 +5,50 @@ async function loadDashboard() {
 
     document.getElementById("repos").textContent = data.repos;
     document.getElementById("followers").textContent = data.followers;
+    document.getElementById("avatar").src = data.avatar;
+    document.getElementById("username").textContent = data.username;
+    document.getElementById("bio").textContent = data.bio;
+    document.getElementById("lastUpdated").textContent = new Date().toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
 
     const langList = document.getElementById("languages");
+    const repoList = document.getElementById("reposList");
+
+    langList.innerHTML = "";
+    repoList.innerHTML = "";
+
+    const max = Math.max(...Object.values(data.top_languages));
 
     for (const [lang, count] of Object.entries(data.top_languages)) {
 
-        const li = document.createElement("li");
+        const wrapper = document.createElement("div");
+        wrapper.className = "language-bar";
 
-        if (count === 1){
-            li.textContent = `${lang} (${count} repo)`;
-        } else {
-            li.textContent = `${lang} (${count} repos)`;
-        }
+        const name = document.createElement("div");
+        name.className = "language-name";
+        name.textContent = lang;
 
-        langList.appendChild(li);
+        const graph = document.createElement("div");
+        graph.className = "language-graph";
+
+        const fill = document.createElement("div");
+        fill.className = "language-fill";
+        fill.style.width = `${(count / max) * 100}%`;
+
+        graph.appendChild(fill);
+
+        const number = document.createElement("span");
+        number.textContent = count;
+
+        wrapper.appendChild(name);
+        wrapper.appendChild(graph);
+        wrapper.appendChild(number);
+
+        langList.appendChild(wrapper);
     }
 
-    const repoList = document.getElementById("reposList");
 
     data.top_repos.forEach(repo => {
 
@@ -34,3 +61,6 @@ async function loadDashboard() {
 }
 
 loadDashboard();
+
+// refresh every 60 seconds
+setInterval(loadDashboard, 60000);
