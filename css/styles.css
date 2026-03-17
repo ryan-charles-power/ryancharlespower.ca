@@ -231,15 +231,26 @@ footer {
 .language-name {
     width: 90px;
     font-size: 0.9rem;
+    flex-shrink: 0;
+    text-align: right;
+    margin-right: 10px;
 }
 
 .language-graph {
     height: 10px;
     background: #eee;
     flex-grow: 1;
-    margin: 0 8px;
     border-radius: 4px;
     overflow: hidden;
+}
+
+.language-number {
+    width: 55px;
+    text-align: left;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    margin-left: 10px;
+    flex-shrink: 0;
 }
 
 .language-fill {
