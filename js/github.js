@@ -53,11 +53,17 @@ async function loadDashboard() {
     data.top_repos.forEach(repo => {
 
         const li = document.createElement("li");
-        li.textContent = `${repo.name} ⭐${repo.stargazers_count}`;
+        li.textContent = `${repo.name} 📦 ${formatBytes(repo.size)}`;
 
         repoList.appendChild(li);
 
     });
+}
+
+function formatBytes(bytes) {
+    if (bytes < 1024) return bytes + " B";
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
+    return (bytes / (1024 * 1024)).toFixed(1) + " MB";
 }
 
 loadDashboard();
